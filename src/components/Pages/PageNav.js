@@ -6,7 +6,6 @@ import {
   Highlight,
   Sell,
   NotInterested,
-  List,
   Settings,
 } from "@mui/icons-material";
 

@@ -60,3 +60,15 @@ body {
   font-size: $fs-secondary-heading;
   font-weight: $fw-bold;
 }
+
+.user-modal-container {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: white;
+  color: black;
+}

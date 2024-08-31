@@ -1,5 +1,4 @@
 import React from "react";
-import { Container, Card } from "reactstrap";
 
 function Index() {
   return (
