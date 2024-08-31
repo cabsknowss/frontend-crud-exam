@@ -31,10 +31,8 @@ ol {
   list-style: none;
 }
 
-a {
+a[class] {
   text-decoration: none;
-  font: inherit;
-  color: $clr-neutral-100;
 }
 
 img,

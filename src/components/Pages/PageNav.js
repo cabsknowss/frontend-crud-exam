@@ -25,11 +25,13 @@ function PageNav() {
     <div className="page-nav">
       <div className="align-self-center">
         <NavLink tag={Link} to="/">
-          <h2 className="ff-mono fw-bold fs-secondary-heading">ADMIN</h2>
+          <h2 className="ff-mono fw-bold fs-secondary-heading text-neutral-200">
+            ADMIN
+          </h2>
         </NavLink>
       </div>
       <div>
-        <ul>
+        <ul className="page-nav__ul">
           {navList.map((nav, index) => (
             <li key={index}>
               <NavItem>

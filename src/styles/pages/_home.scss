@@ -9,6 +9,10 @@
   margin-block: 2rem;
 }
 
-.page-home__content * {
-  color: $clr-neutral-900;
+.page-home__content h3 {
+  transition: opacity 0.3s;
+}
+
+.page-home__content h3:hover {
+  opacity: 0.5;
 }

@@ -8,7 +8,7 @@ function Index() {
         <h1 className="page-main__title">Home</h1>
         <div className="page-home__content">
           <div>
-            <h2 className="fs-primary-heading fw-bold margin-block-400">
+            <h2 className="fs-primary-heading fw-bold margin-block-400 text-neutral-700">
               Kenneth D. Cabobos
             </h2>
           </div>
