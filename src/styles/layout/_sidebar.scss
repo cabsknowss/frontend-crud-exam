@@ -9,7 +9,13 @@
   cursor: pointer;
 }
 
-.page-nav__list:hover:not(.nohover) {
+.page-nav h2,
+.page-nav__list {
+  transition: color 0.3s;
+}
+
+.page-nav__list:hover:not(.nohover),
+.page-nav h2:hover {
   color: $clr-primary-700;
 }
 

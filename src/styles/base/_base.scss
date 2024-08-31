@@ -51,3 +51,14 @@ body {
   font-size: $fs-regular;
   color: $clr-neutral-100;
 }
+
+.page-main__container {
+  height: 100%;
+  max-width: 80%;
+  margin-inline: auto;
+}
+
+.page-main__title {
+  font-size: $fs-secondary-heading;
+  font-weight: $fw-bold;
+}

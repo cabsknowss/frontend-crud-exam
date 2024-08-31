@@ -6,8 +6,10 @@
 @import "base/utility";
 
 // layout
-@import "layout/_app";
-@import "layout/_sidebar";
-@import "layout/_content";
+@import "layout/app";
+@import "layout/sidebar";
+@import "layout/content";
 
 // pages
+@import "pages/home";
+@import "pages/user";

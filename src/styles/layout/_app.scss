@@ -1,7 +1,8 @@
-$page-padding: 3rem 2rem;
+$sidebar-padding: 3rem 2rem;
+$main-padding: 5rem 2rem;
 
 .page {
-  min-height: 100dvh;
+  height: 100vh;
   display: flex;
 }
 
@@ -9,7 +10,7 @@ $page-padding: 3rem 2rem;
   $nav-width: 256px;
 
   flex: 0 0 $nav-width;
-  padding: $page-padding;
+  padding: $sidebar-padding;
 
   display: flex;
   flex-direction: column;
@@ -20,7 +21,7 @@ $page-padding: 3rem 2rem;
 
 .page-main {
   flex: 1 1 auto;
-  padding: $page-padding;
+  padding: $main-padding;
 
   background-color: $clr-primary-300;
 }

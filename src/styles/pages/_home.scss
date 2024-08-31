@@ -1,0 +1,14 @@
+.page-home {
+  height: 100%;
+}
+
+.page-home__content {
+  background-color: $clr-neutral-200;
+  border-radius: 1rem;
+  padding: 5rem 4rem;
+  margin-block: 2rem;
+}
+
+.page-home__content * {
+  color: $clr-neutral-900;
+}

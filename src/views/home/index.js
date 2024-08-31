@@ -3,16 +3,30 @@ import { Container, Card } from "reactstrap";
 
 function Index() {
   return (
-    <Container>
-      <Card className="mt-5 p-5">
-        <h1 className="display-4">&#123;your name&#125;</h1>
-        <address>
-          <a href="mailto:email@address.com">email@address.com</a>
-          <br />
-          <a href="tel:+635552368">(+63) 123-1234-1234</a>
-        </address>
-      </Card>
-    </Container>
+    <div className="page-home">
+      <div className="page-main__container">
+        <h1 className="page-main__title">Home</h1>
+        <div className="page-home__content">
+          <div>
+            <h2 className="fs-primary-heading fw-bold margin-block-400">
+              Kenneth D. Cabobos
+            </h2>
+          </div>
+          <div>
+            <a href="mailto:caboboskennethzxc@gmail.com">
+              <h3 className="fw-semi-bold margin-block-200">
+                caboboskennethzxc@gmail.com
+              </h3>
+            </a>
+          </div>
+          <div>
+            <a href="tel:+639453478092">
+              <h3 className="fw-semi-bold">(+63) 945-347-8092</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 
