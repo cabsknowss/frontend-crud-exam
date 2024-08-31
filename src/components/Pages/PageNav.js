@@ -1,68 +1,57 @@
-import React, {useState} from 'react';
-import {NavLink as Link} from 'react-router-dom';
+import React from "react";
+import { NavLink as Link } from "react-router-dom";
+import { NavLink, NavItem } from "reactstrap";
 import {
-	Collapse,
-	Navbar,
-	NavbarToggler,
-	NavbarBrand,
-	Nav,
-	NavItem,
-	NavLink,
-	UncontrolledDropdown,
-	DropdownToggle,
-	DropdownMenu,
-	DropdownItem,
-	NavbarText,
-} from 'reactstrap';
+  Group,
+  Highlight,
+  Sell,
+  NotInterested,
+  List,
+} from "@mui/icons-material";
 
 function PageNav() {
-	const [isOpen, setIsOpen] = useState(false);
-	const toggle = () => setIsOpen(!isOpen);
+  const navList = [
+    { text: "Users", icon: <Group />, link: "/users" },
+    { text: "Feature", icon: <Highlight />, link: "/features" },
+    { text: "Pricing", icon: <Sell />, link: "/pricing" },
+    { text: "Disabled", icon: <NotInterested />, link: "/disabled" },
+  ];
 
-	return (
-		<Navbar color='light' light expand='md'>
-			<NavbarBrand tag={Link} to='/'>
-				Admin
-			</NavbarBrand>
-			<NavbarToggler onClick={toggle} />
-			<Collapse isOpen={isOpen} navbar>
-				<Nav className='mr-auto' navbar>
-					<NavItem>
-						<NavLink tag={Link} to='/users'>
-							Users
-						</NavLink>
-					</NavItem>
-					<NavItem>
-						<NavLink tag={Link} to='/features'>
-							Features
-						</NavLink>
-					</NavItem>
-					<NavItem>
-						<NavLink tag={Link} to='/pricing'>
-							Pricing
-						</NavLink>
-					</NavItem>
-					<NavItem>
-						<NavLink tag={Link} to='/disabled' disabled>
-							Disabled
-						</NavLink>
-					</NavItem>
-					<UncontrolledDropdown nav inNavbar>
-						<DropdownToggle nav caret>
-							Options
-						</DropdownToggle>
-						<DropdownMenu>
-							<DropdownItem>Option 1</DropdownItem>
-							<DropdownItem>Option 2</DropdownItem>
-							<DropdownItem divider />
-							<DropdownItem>Reset</DropdownItem>
-						</DropdownMenu>
-					</UncontrolledDropdown>
-				</Nav>
-				<NavbarText>Simple Text</NavbarText>
-			</Collapse>
-		</Navbar>
-	);
+  return (
+    <div>
+      <div>
+        <NavLink tag={Link} to="/">
+          <h2>Admin</h2>
+        </NavLink>
+      </div>
+      <div>
+        <ul>
+          {navList.map((nav, index) => (
+            <li key={index}>
+              <NavItem>
+                <NavLink tag={Link} to={nav.link}>
+                  <div>{nav.icon}</div>
+                  <p>{nav.text}</p>
+                </NavLink>
+              </NavItem>
+            </li>
+          ))}
+          <li>
+            <div>
+              <List />
+            </div>
+            <div>Options</div>
+            <div>
+              <p>Option 1</p>
+              <p>Option 2</p>
+              <p>Reset</p>
+            </div>
+          </li>
+          <li>Simple Text</li>
+        </ul>
+      </div>
+    </div>
+  );
 }
 
 export default PageNav;

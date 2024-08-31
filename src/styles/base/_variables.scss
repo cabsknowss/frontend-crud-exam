@@ -1,0 +1,57 @@
+$clr-primary-900: hsl(205, 56%, 13%);
+$clr-primary-700: hsl(206, 89%, 45%);
+$clr-primary-400: hsl(206, 98%, 76%);
+$clr-primary-300: hsl(206, 100%, 81%);
+$clr-primary-100: hsl(213, 26%, 93%);
+
+$clr-accent-900: hsl(191, 76%, 13%);
+$clr-accent-700: hsl(177, 54%, 22%);
+$clr-accent-400: hsl(171, 76%, 27%);
+$clr-accent-100: hsl(119, 62%, 60%);
+
+$clr-success-400: hsl(99, 70%, 58%);
+$clr-success-200: hsl(99, 70%, 75%);
+$clr-error-400: hsl(2, 78%, 54%);
+$clr-error-200: hsl(2, 78%, 75%);
+
+$clr-neutral-900: hsl(0, 0%, 0%);
+$clr-neutral-800: hsl(0, 0%, 6%);
+$clr-neutral-700: hsl(0, 0%, 12%);
+$clr-neutral-600: hsl(0, 0%, 18%);
+$clr-neutral-500: hsl(0, 0%, 50%);
+$clr-neutral-400: hsl(0, 0%, 82%);
+$clr-neutral-300: hsl(0, 0%, 88%);
+$clr-neutral-200: hsl(0, 0%, 94%);
+$clr-neutral-100: hsl(0, 0%, 100%);
+
+$ff-sans: "Helvetica", sans-serif;
+$ff-serif: "Georgia", "Times New Roman", serif;
+$ff-mono: "Courier New", "Roboto Mono", monospace;
+
+$fw-regular: 400;
+$fw-semi-bold: 500;
+$fw-bold: 700;
+
+$fs-100: 0.8125rem;
+$fs-200: 0.875rem;
+$fs-300: 0.9375rem;
+$fs-400: 1rem;
+$fs-500: 1.33rem;
+$fs-600: 1.875rem;
+$fs-700: 2.5rem;
+$fs-800: 3.5rem;
+
+$fs-primary-heading: var($fs-700);
+$fs-secondary-heading: var($fs-600);
+$fs-subheading: var($fs-500);
+$fs-regular: var($fs-400);
+
+$size-100: 0.25rem;
+$size-200: 0.5rem;
+$size-300: 0.75rem;
+$size-400: 1rem;
+$size-500: 1.5rem;
+$size-600: 2rem;
+$size-700: 2.5rem;
+$size-800: 3rem;
+$size-900: 3.5rem;

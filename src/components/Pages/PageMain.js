@@ -1,14 +1,9 @@
-import styles from './PageMain.module.scss';
-import React from 'react';
+import React from "react";
 
 function PageMain(props) {
-	const {children} = props;
+  const { children } = props;
 
-	return (
-		<main className={styles['main']} role='main'>
-			{children}
-		</main>
-	);
+  return <main role="main">{children}</main>;
 }
 
 export default PageMain;
