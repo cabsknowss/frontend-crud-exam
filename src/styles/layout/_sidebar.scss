@@ -1,0 +1,18 @@
+.page-nav__list {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  padding: 10px 12px;
+  margin: 1rem 0 0 -0.5rem;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.page-nav__list:hover:not(.nohover) {
+  color: $clr-primary-700;
+}
+
+.page-nav__list.active {
+  background-color: $clr-primary-700;
+}

@@ -1,16 +1,15 @@
 import React from "react";
-import PageFooter from "./PageFooter";
 import PageMain from "./PageMain";
 import PageNav from "./PageNav";
 
 function Page(props) {
   const { children } = props;
+  console.log(children.props.path);
 
   return (
-    <div>
+    <div className="page">
       <PageNav />
       <PageMain>{children}</PageMain>
-      <PageFooter />
     </div>
   );
 }

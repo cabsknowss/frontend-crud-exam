@@ -1,0 +1,26 @@
+$page-padding: 3rem 2rem;
+
+.page {
+  min-height: 100dvh;
+  display: flex;
+}
+
+.page-nav {
+  $nav-width: 256px;
+
+  flex: 0 0 $nav-width;
+  padding: $page-padding;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  // align-items: center;
+  background-color: $clr-primary-900;
+}
+
+.page-main {
+  flex: 1 1 auto;
+  padding: $page-padding;
+
+  background-color: $clr-primary-300;
+}

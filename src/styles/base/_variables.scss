@@ -41,10 +41,10 @@ $fs-600: 1.875rem;
 $fs-700: 2.5rem;
 $fs-800: 3.5rem;
 
-$fs-primary-heading: var($fs-700);
-$fs-secondary-heading: var($fs-600);
-$fs-subheading: var($fs-500);
-$fs-regular: var($fs-400);
+$fs-primary-heading: $fs-800;
+$fs-secondary-heading: $fs-600;
+$fs-subheading: $fs-500;
+$fs-regular: $fs-400;
 
 $size-100: 0.25rem;
 $size-200: 0.5rem;
