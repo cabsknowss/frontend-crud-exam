@@ -17,15 +17,31 @@ function Index() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://reqres.in/api/users?page=1", {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
-        const result = await response.json();
-        console.log(result.data);
-        setUsers(result.data);
+        let page = 1;
+        let morePages = true;
+        let data = [];
+
+        while (morePages) {
+          const response = await fetch(
+            `https://reqres.in/api/users?page=${page}`,
+            {
+              method: "GET",
+              headers: {
+                "Content-Type": "application/json",
+              },
+            }
+          );
+          const result = await response.json();
+          data = data.concat(result.data);
+
+          if (result.page >= result.total_pages) {
+            morePages = false;
+          } else {
+            page++;
+          }
+        }
+        console.log(data);
+        setUsers(data);
         setLoading(false);
       } catch (error) {
         setError(error);

@@ -7,9 +7,9 @@ const UserTable = (props) => {
   const [currentPage, setCurrentPage] = useState(1);
 
   const rowsPerPage = 10; // Allowed data per page
-  const totalPages = Math.ceil([...users, ...users].length / rowsPerPage); // Computes how many is the page
+  const totalPages = Math.ceil([...users].length / rowsPerPage); // Computes how many is the page
 
-  const dataShow = [...users, ...users].slice(
+  const dataShow = [...users].slice(
     (currentPage - 1) * rowsPerPage,
     currentPage * rowsPerPage
   ); // A sliced array that will be used in mapping the data
