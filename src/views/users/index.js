@@ -21,7 +21,7 @@ function Index() {
           },
         });
         const result = await response.json();
-        // console.log(result.data);
+        console.log(result.data);
         setUsers(result.data);
         setLoading(false);
       } catch (error) {

@@ -9,21 +9,40 @@ const EditUser = (props) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const data = {
-      email,
-      firstName,
-      lastName,
+      email: email,
+      first_name: firstName,
+      last_name: lastName,
     };
-    console.log("handleSubmit");
+
+    try {
+      const response = await fetch(
+        `https://reqres.in/api/users/${userData.id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error(`ERROR! Status: ${response.status}`);
+      }
+
+      const result = await response.json();
+      console.log(`Edit Successful: ${result}`);
+    } catch (error) {}
   };
 
   return (
     <div className="modal">
       <div className="user-modal-container">
         <h2 className="fw-bold fs-primary-heading padding-bottom-400">
-          Edit User User
+          Edit User
         </h2>
 
         <form onSubmit={handleSubmit}>

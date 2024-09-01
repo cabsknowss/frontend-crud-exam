@@ -6,15 +6,36 @@ const AddUser = (props) => {
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
+  const [addedUser, setAddedUser] = useState(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const data = {
-      email,
-      firstName,
-      lastName,
+      email: email,
+      avatar: "",
+      first_name: firstName,
+      last_name: lastName,
     };
-    console.log("handleSubmit");
+    try {
+      console.log(data);
+      const response = await fetch("https://reqres.in/api/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error(`ERROR! Status: ${response.status}`);
+      }
+
+      const result = await response.json();
+      console.log(`User Created: ${result.id}`);
+      console.log(`User Created: ${JSON.stringify(result, null, 2)}`);
+    } catch (error) {
+      console.log(`Error: ${error.message}`);
+    }
   };
 
   return (

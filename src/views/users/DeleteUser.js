@@ -3,6 +3,29 @@ import React from "react";
 const DeleteUser = (props) => {
   const { setModal, userData } = props;
   console.log(userData);
+
+  const handleDelete = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch(
+        `https://reqres.in/api/users/${userData.id}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error(`ERROR! Status: ${response.status}`);
+      }
+
+      console.log(`User deleted successfully: status ${response.status}`);
+    } catch (error) {
+      console.error(`Error: ${error.message}`);
+    }
+  };
   return (
     <div className="modal">
       <div className="user-modal-container">
@@ -21,8 +44,10 @@ const DeleteUser = (props) => {
           </div>
         </div>
         <div className="form-btns">
-          <button type="delete">Delete</button>
-          <button type="close" onClick={() => setModal("")}>
+          <button onClick={handleDelete} type="delete">
+            Delete
+          </button>
+          <button onClick={() => setModal("")} type="close">
             Cancel
           </button>
         </div>
