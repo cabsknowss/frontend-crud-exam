@@ -5,10 +5,11 @@ import EditUser from "./EditUser";
 import DeleteUser from "./DeleteUser";
 
 function Index() {
-  const [userData, setUserData] = useState(null);
+  const [users, setUsers] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [modal, setModal] = useState("");
+  const [userData, setUserData] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,7 +22,7 @@ function Index() {
         });
         const result = await response.json();
         // console.log(result.data);
-        setUserData(result.data);
+        setUsers(result.data);
         setLoading(false);
       } catch (error) {
         setError(error);
@@ -34,11 +35,13 @@ function Index() {
   const addUser = () => {
     setModal("Add User");
   };
-  const editUser = () => {
+  const editUser = (user) => {
     setModal("Edit User");
+    setUserData(user);
   };
-  const deleteUser = () => {
+  const deleteUser = (user) => {
     setModal("Delete User");
+    setUserData(user);
   };
 
   if (loading) return <p>Loading...</p>;
@@ -66,7 +69,7 @@ function Index() {
               </tr>
             </thead>
             <tbody>
-              {userData.map((user, index) => (
+              {users.map((user, index) => (
                 <tr key={index}>
                   <th scope="row">{user.id}</th>
                   <td className="page-user__table-avatar-cell">
@@ -81,13 +84,13 @@ function Index() {
                   <td>{user.last_name}</td>
                   <td className="page-user__table-action">
                     <div
-                      onClick={() => editUser()}
+                      onClick={() => editUser(user)}
                       className="page-user__table-action-edit"
                     >
                       <Edit style={{ color: "white" }} />
                     </div>
                     <div
-                      onClick={() => deleteUser()}
+                      onClick={() => deleteUser(user)}
                       className="page-user__table-action-delete"
                     >
                       <Delete style={{ color: "white" }} />
@@ -101,8 +104,12 @@ function Index() {
       </div>
 
       {modal === "Add User" && <AddUser setModal={setModal} />}
-      {modal === "Edit User" && <EditUser setModal={setModal} />}
-      {modal === "Delete User" && <DeleteUser setModal={setModal} />}
+      {modal === "Edit User" && (
+        <EditUser userData={userData} setModal={setModal} />
+      )}
+      {modal === "Delete User" && (
+        <DeleteUser userData={userData} setModal={setModal} />
+      )}
     </div>
   );
 }
