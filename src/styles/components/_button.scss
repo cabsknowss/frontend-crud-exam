@@ -1,0 +1,36 @@
+button {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 6px;
+  border: 0;
+  box-shadow: 2px 2px 5px hsla(0, 0%, 0%, 0.3);
+  transition: opacity 0.3s ease;
+}
+
+button:hover {
+  opacity: 0.6;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+button[type="add"] {
+  background-color: $clr-primary-400;
+  color: $clr-neutral-700;
+}
+
+button[type="submit"] {
+  background-color: $clr-success-400;
+  color: $clr-neutral-100;
+}
+
+button[type="delete"] {
+  background-color: $clr-error-400;
+  color: $clr-neutral-100;
+}
+
+button[type="close"] {
+  background-color: $clr-neutral-200;
+}

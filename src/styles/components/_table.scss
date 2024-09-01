@@ -1,0 +1,61 @@
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  text-align: left;
+
+  th {
+    padding: 12px 15px;
+    border: 1px solid $clr-neutral-600;
+    text-align: center;
+    background-color: $clr-neutral-600;
+    color: $clr-neutral-200;
+  }
+
+  td {
+    padding: 12px 15px;
+    border: 1px solid $clr-neutral-600;
+    color: $clr-neutral-600;
+
+    .table-avatar {
+      display: block;
+      margin: auto;
+      max-width: 40px;
+      height: auto;
+      border-radius: 50%;
+    }
+  }
+
+  .table-action {
+    text-align: center;
+
+    .table-action__edit {
+      background-color: $clr-success-400;
+    }
+
+    .table-action__delete {
+      background-color: $clr-error-400;
+    }
+  }
+
+  .table-action > * {
+    display: inline-block;
+    padding: 0.5rem;
+    margin-inline: 0.5rem;
+    border-radius: 50%;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.2s ease-in;
+  }
+
+  .table-action > *:hover {
+    opacity: 0.6;
+  }
+
+  tbody tr {
+    background-color: #f2f2f2;
+  }
+
+  tbody tr:hover {
+    background-color: #d9d9d9;
+  }
+}

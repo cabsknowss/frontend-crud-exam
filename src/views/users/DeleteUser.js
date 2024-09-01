@@ -27,23 +27,19 @@ const DeleteUser = (props) => {
     }
   };
   return (
-    <div className="modal">
-      <div className="user-modal-container">
-        <h2 className="fw-bold fs-primary-heading padding-bottom-400">
-          Delete User
-        </h2>
-        <div className="padding-bottom-400">
-          <p className="padding-block-300 fw-bold">
-            Are you sure you want to delete this user?
-          </p>
-          <div>
+    <div className="action-modal">
+      <div className="action-modal__container">
+        <h2 className="action-modal__title">Delete User</h2>
+        <div>
+          <p>Are you sure you want to delete this user?</p>
+          <div className="action-modal-delete__details">
             <p>ID: {userData.id}</p>
             <p>Email: {userData.email}</p>
             <p>First Name: {userData.first_name}</p>
             <p>Last Name: {userData.last_name}</p>
           </div>
         </div>
-        <div className="form-btns">
+        <div className="modal-buttons">
           <button onClick={handleDelete} type="delete">
             Delete
           </button>

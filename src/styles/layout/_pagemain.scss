@@ -1,0 +1,15 @@
+.page-section {
+  height: 100%;
+
+  .page-container {
+    height: 100%;
+    max-width: 80%;
+    margin-inline: auto;
+
+    .page-title {
+      font-size: $fs-secondary-heading;
+      font-weight: $fw-bold;
+      margin-bottom: 2rem;
+    }
+  }
+}

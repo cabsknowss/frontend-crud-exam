@@ -1,6 +1,3 @@
-$sidebar-padding: 3rem 2rem;
-$main-padding: 5rem 2rem;
-
 .page {
   height: 100vh;
   display: flex;
@@ -8,18 +5,17 @@ $main-padding: 5rem 2rem;
 
 .page-nav {
   $nav-width: 256px;
+  $sidebar-padding: 3rem 2rem;
 
   flex: 0 0 $nav-width;
   padding: $sidebar-padding;
 
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  // align-items: center;
   background-color: $clr-primary-900;
 }
 
 .page-main {
+  $main-padding: 5rem 2rem;
+
   flex: 1 1 auto;
   padding: $main-padding;
 

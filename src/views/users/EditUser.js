@@ -39,8 +39,8 @@ const EditUser = (props) => {
   };
 
   return (
-    <div className="modal">
-      <div className="user-modal-container">
+    <div className="action-modal">
+      <div className="action-modal__container">
         <h2 className="fw-bold fs-primary-heading padding-bottom-400">
           Edit User
         </h2>
@@ -70,7 +70,7 @@ const EditUser = (props) => {
             placeholder="Enter your last name"
           />
 
-          <div className="form-btns">
+          <div className="modal-buttons">
             <button type="submit">Submit</button>
             <button type="close" onClick={() => setModal("")}>
               Cancel

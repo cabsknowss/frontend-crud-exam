@@ -1,71 +1,19 @@
-.page-user {
-  height: 100%;
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
+.loading-icon {
+  position: fixed;
+  top: 40%;
+  left: 55%;
 
-.page-user__add-user-btn {
-  border: 0.5px solid $clr-primary-900;
-  background-color: $clr-primary-400;
-  color: $clr-neutral-700;
-}
-
-.page-user__table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 2rem 0;
-  text-align: left;
-}
-
-th,
-td {
-  padding: 12px 15px;
-  border: 1px solid $clr-neutral-600;
-}
-
-th {
-  text-align: center;
-  background-color: $clr-neutral-600;
-  color: $clr-neutral-200;
-}
-
-td {
-  color: $clr-neutral-600;
-}
-
-tbody tr:nth-child(odd) {
-  background-color: #f2f2f2;
-}
-
-tbody tr:nth-child(even) {
-  background-color: #e6e6e6;
-}
-
-tbody tr:hover {
-  background-color: #d9d9d9;
-}
-
-.page-user__table-avatar-img {
-  display: block;
-  margin: auto;
-  max-width: 40px;
+  max-width: 100px;
   height: auto;
-  border-radius: 50%;
-}
-
-.page-user__table-action {
-  text-align: center;
-}
-
-.page-user__table-action > * {
-  display: inline-block;
-  padding: 0.5rem;
-  margin-inline: 0.5rem;
-  border-radius: 50%;
-}
-
-.page-user__table-action-edit {
-  background-color: $clr-success-400;
-}
-
-.page-user__table-action-delete {
-  background-color: $clr-error-400;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+  animation: rotation 2s linear infinite;
 }

@@ -1,12 +1,19 @@
-.page-home {
-  height: 100%;
-}
-
 .page-home__content {
   background-color: $clr-neutral-200;
   border-radius: 1rem;
   padding: 5rem 4rem;
-  margin-block: 2rem;
+
+  h2 {
+    font-weight: $fw-bold;
+    font-size: $fs-primary-heading;
+    margin-block: 1rem;
+    color: $clr-neutral-700;
+  }
+
+  h3 {
+    font-weight: $fw-semi-bold;
+    margin-block: 0.5rem;
+  }
 }
 
 .page-home__content h3 {

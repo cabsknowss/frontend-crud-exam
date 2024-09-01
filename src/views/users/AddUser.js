@@ -39,11 +39,9 @@ const AddUser = (props) => {
   };
 
   return (
-    <div className="modal">
-      <div className="user-modal-container">
-        <h2 className="fw-bold fs-primary-heading padding-bottom-400">
-          Add User
-        </h2>
+    <div className="action-modal">
+      <div className="action-modal__container">
+        <h2 className="action-modal__title">Add User</h2>
 
         <form onSubmit={handleSubmit}>
           <label for="email">Email</label>
@@ -70,7 +68,7 @@ const AddUser = (props) => {
             placeholder="Enter your last name"
           />
 
-          <div className="form-btns">
+          <div className="modal-buttons">
             <button type="submit">Submit</button>
             <button type="close" onClick={() => setModal("")}>
               Cancel

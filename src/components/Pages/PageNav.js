@@ -22,33 +22,30 @@ function PageNav() {
 
   return (
     <div className="page-nav">
-      <div className="align-self-center">
+      <div className="page-nav__nameplate">
         <NavLink tag={Link} to="/">
-          <h2 className="ff-mono fw-bold fs-secondary-heading text-neutral-200">
-            ADMIN
-          </h2>
+          <h2>ADMIN</h2>
         </NavLink>
       </div>
-      <div>
-        <ul className="page-nav__ul">
-          {navList.map((nav, index) => (
-            <li key={index}>
-              <NavItem>
-                <NavLink tag={Link} to={nav.link}>
-                  <div
-                    className={`page-nav__list ${
-                      location.pathname.includes(nav.link) && "active nohover"
-                    }`}
-                  >
-                    <div>{nav.icon}</div>
-                    <p>{nav.text}</p>
-                  </div>
-                </NavLink>
-              </NavItem>
-            </li>
-          ))}
-        </ul>
-      </div>
+
+      <ul>
+        {navList.map((nav, index) => (
+          <li key={index}>
+            <NavItem>
+              <NavLink tag={Link} to={nav.link}>
+                <div
+                  className={`page-nav__list ${
+                    location.pathname.includes(nav.link) && "active nohover"
+                  }`}
+                >
+                  <div>{nav.icon}</div>
+                  <p>{nav.text}</p>
+                </div>
+              </NavLink>
+            </NavItem>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

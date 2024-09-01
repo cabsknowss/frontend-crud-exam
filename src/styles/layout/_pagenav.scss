@@ -1,0 +1,43 @@
+.page-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
+  .page-nav__nameplate {
+    align-self: center;
+  }
+
+  h2 {
+    font-family: $ff-mono;
+    font-weight: $fw-bold;
+    font-size: $fs-secondary-heading;
+    color: $clr-neutral-200;
+    align-self: center;
+  }
+
+  .page-nav__list {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    padding: 10px 12px;
+    margin: 1rem 0 0 -0.5rem;
+    border-radius: 1rem;
+    color: $clr-neutral-200;
+    cursor: pointer;
+  }
+}
+
+.page-nav h2,
+.page-nav__list {
+  transition: color 0.3s;
+}
+
+.page-nav__list:hover:not(.nohover),
+.page-nav h2:hover {
+  color: $clr-primary-700;
+}
+
+.page-nav__list.active {
+  background-color: $clr-primary-700;
+}

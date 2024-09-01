@@ -1,0 +1,15 @@
+form {
+  label {
+    padding-bottom: 0.5rem;
+  }
+
+  input {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    width: 100%;
+  }
+
+  input::placeholder {
+    opacity: 0.5;
+  }
+}

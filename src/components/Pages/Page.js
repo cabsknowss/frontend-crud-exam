@@ -4,7 +4,6 @@ import PageNav from "./PageNav";
 
 function Page(props) {
   const { children } = props;
-  console.log(children.props.path);
 
   return (
     <div className="page">

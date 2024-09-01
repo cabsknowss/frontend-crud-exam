@@ -5,16 +5,17 @@
 @import "base/base";
 @import "base/utility";
 
+// components
+@import "components/button";
+@import "components/form";
+@import "components/table";
+@import "components/actionmodal";
+
 // layout
 @import "layout/app";
-@import "layout/sidebar";
-@import "layout/content";
+@import "layout/pagenav";
+@import "layout/pagemain";
 
 // pages
 @import "pages/home";
 @import "pages/user";
-
-// modal
-@import "modal/adduser";
-@import "modal/edituser";
-@import "modal/deleteuser";
