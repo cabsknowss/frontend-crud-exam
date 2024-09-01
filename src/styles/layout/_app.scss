@@ -1,23 +1,43 @@
 .page {
   height: 100vh;
   display: flex;
-}
 
-.page-nav {
-  $nav-width: 256px;
-  $sidebar-padding: 3rem 2rem;
+  @media (max-width: $mobile-screen) {
+    flex-direction: column;
+  }
 
-  flex: 0 0 $nav-width;
-  padding: $sidebar-padding;
+  .page-nav {
+    $nav-width: 256px;
+    $sidebar-padding: 3rem 2rem;
 
-  background: $clr-dark-gradient;
-}
+    flex: 0 0 $nav-width;
+    padding: $sidebar-padding;
 
-.page-main {
-  $main-padding: 5rem 1rem;
+    background: $clr-dark-gradient;
+    transition: flex 0.3s linear;
 
-  flex: 1 1 auto;
-  padding: $main-padding;
+    @media (max-width: $mobile-screen) {
+      flex: 0 1 auto;
+      padding: 2rem;
+    }
 
-  background-color: $clr-neutral-200;
+    @media (max-width: $tablet-screen) {
+      flex: 0 0 128px;
+    }
+  }
+
+  .page-nav:hover {
+    @media (min-width: $mobile-screen) and (max-width: $tablet-screen) {
+      flex: 0 0 256px;
+    }
+  }
+
+  .page-main {
+    $main-padding: 5rem 1rem;
+
+    flex: 1 1 auto;
+    padding: $main-padding;
+
+    background-color: $clr-neutral-200;
+  }
 }

@@ -4,7 +4,7 @@ import { Close } from "@mui/icons-material";
 const ProfileModal = (props) => {
   const { viewProfile, setViewProfile } = props;
   return (
-    <div className="profile-modal">
+    <div onClick={() => setViewProfile(null)} className="profile-modal">
       <div className="profile-modal__container">
         <div>
           <img src={viewProfile.avatar} alt="avatar" />

@@ -8,11 +8,22 @@
     font-size: $fs-primary-heading;
     margin-block: 1rem;
     color: $clr-neutral-400;
+
+    @media (max-width: $mobile-screen) {
+      font-size: 3rem;
+      text-align: center;
+    }
   }
 
   h3 {
     font-weight: $fw-semi-bold;
     margin-block: 0.5rem;
+    opacity: 0.8;
+
+    @media (max-width: $mobile-screen) {
+      font-size: 1rem;
+      text-align: center;
+    }
   }
 }
 

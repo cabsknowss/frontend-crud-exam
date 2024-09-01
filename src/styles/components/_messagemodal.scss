@@ -10,7 +10,7 @@
 
   .msg-modal__container {
     position: fixed;
-    width: 600px;
+    max-width: 600px;
     height: auto;
 
     top: 50%;
@@ -30,7 +30,7 @@
     }
 
     .msg-modal__title {
-      font-weight: $fw-bold;
+      font-weight: $fw-semi-bold;
       font-size: $fs-subheading;
       padding: 0 0 1rem 1rem;
       margin-bottom: 1rem;

@@ -16,6 +16,11 @@
   transform: translate(-50%, -50%);
   transform-origin: center;
   animation: rotation 2s linear infinite;
+
+  @media (max-width: $mobile-screen) {
+    top: 50%;
+    left: 37%;
+  }
 }
 
 .page-user__header {

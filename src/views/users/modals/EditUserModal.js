@@ -47,9 +47,7 @@ const EditUserModal = (props) => {
   return (
     <div className="action-modal">
       <div className="action-modal__container">
-        <h2 className="fw-bold fs-primary-heading padding-bottom-400">
-          Edit User
-        </h2>
+        <h2 className="action-modal__title">Edit User {userData.id}</h2>
 
         <form onSubmit={handleSubmit}>
           <label for="email">

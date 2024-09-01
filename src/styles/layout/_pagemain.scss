@@ -6,6 +6,10 @@
     max-width: 90%;
     margin-inline: auto;
 
+    @media (max-width: $mobile-screen) {
+      height: auto;
+    }
+
     .page-title {
       font-size: $fs-secondary-heading;
       font-weight: $fw-bold;

@@ -11,7 +11,7 @@
 
   .profile-modal__container {
     position: fixed;
-    width: 600px;
+    max-width: 600px;
     height: auto;
 
     top: 50%;
@@ -26,6 +26,12 @@
 
     display: flex;
     gap: 2rem;
+
+    @media (max-width: $mobile-screen) {
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem 2rem 2rem 2rem;
+    }
 
     .profile-modal__details {
       width: 100%;
@@ -45,6 +51,10 @@
       right: 0;
       margin: 1rem;
       transition: opacity 0.2s ease-out;
+
+      @media (max-width: $mobile-screen) {
+        display: none;
+      }
     }
 
     .profile-modal__closebtn:hover {

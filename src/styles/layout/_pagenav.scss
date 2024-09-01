@@ -5,9 +5,29 @@
 
   .page-nav__nameplate {
     align-self: center;
+    display: flex;
+    align-items: center;
+    height: 50px;
+
+    @media (max-width: $mobile-screen) {
+      align-self: auto;
+      justify-content: space-between;
+    }
 
     .page-nav__title {
       text-shadow: 1px 1px 9px rgba(255, 255, 255, 0.5);
+    }
+
+    .page-nav__menu-open {
+      display: none;
+
+      @media (max-width: $mobile-screen) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+      }
     }
   }
 
@@ -17,6 +37,51 @@
     font-size: $fs-secondary-heading;
     color: $clr-neutral-200;
     align-self: center;
+  }
+
+  .page-nav__ul {
+    background-color: none;
+    @media (max-width: $mobile-screen) {
+      position: fixed;
+      top: 0px;
+      right: 0px;
+      height: 100vh;
+      width: 256px;
+      background: $clr-dark-gradient;
+      z-index: 99;
+      transform: translateX(110%);
+      transition: transform 0.3s linear;
+      padding: 2rem 2rem;
+
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .page-nav__menu-close-cont {
+      display: none;
+      @media (max-width: $mobile-screen) {
+        text-align: right;
+        display: flex;
+        justify-content: end;
+      }
+      .page-nav__menu-close {
+        display: none;
+
+        @media (max-width: $mobile-screen) {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 50px;
+          width: 50px;
+        }
+      }
+    }
+  }
+
+  .page-nav__open {
+    transform: translateX(0%);
+    box-shadow: -2px -2px 200px $clr-primary-900;
   }
 
   .page-nav__list {
@@ -29,7 +94,21 @@
     border-radius: 0.3rem;
     color: $clr-neutral-200;
     cursor: pointer;
+
+    @media (max-width: $tablet-screen) {
+      justify-content: center;
+    }
+
+    .page-nav__list-text {
+      @media (min-width: $mobile-screen) and (max-width: $tablet-screen) {
+        display: none;
+      }
+    }
   }
+}
+
+.page-nav:hover .page-nav__list-text {
+  display: block;
 }
 
 .page-nav h2,

@@ -12,23 +12,34 @@
 
   .action-modal__container {
     position: fixed;
-    width: 600px;
+    max-width: 600px;
     height: auto;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
-    // background-color: white;
     background: $clr-light-gradient;
     color: black;
     padding: 3rem 5rem;
     border-radius: 1rem;
     box-shadow: 0 4px 10px hsla(0, 0%, 0%, 0.3);
 
+    @media (max-width: $mobile-screen) {
+      padding: 2rem 4rem;
+    }
+
     .action-modal__title {
       font-weight: $fw-bold;
       font-size: $fs-primary-heading;
       padding-bottom: 1rem;
+
+      @media (max-width: $mobile-screen) {
+        font-size: $fs-secondary-heading;
+      }
+
+      @media (max-width: $tablet-screen) {
+        font-size: $fs-secondary-heading;
+      }
     }
   }
 }
