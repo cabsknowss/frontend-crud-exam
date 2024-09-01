@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
+import SuccessModal from "./SuccessModal";
+import ErrorModal from "./ErrorModal";
 
-const DeleteUser = (props) => {
+const DeleteUserModal = (props) => {
   const { setModal, userData } = props;
-  console.log(userData);
+
+  const [msg, setMsg] = useState(null);
+  const [error, setError] = useState(null);
 
   const handleDelete = async (e) => {
     e.preventDefault();
@@ -21,9 +25,12 @@ const DeleteUser = (props) => {
         throw new Error(`ERROR! Status: ${response.status}`);
       }
 
-      console.log(`User deleted successfully: status ${response.status}`);
+      // const result = await response.json();
+      setError(null);
+      setMsg("User Account is Deleted");
     } catch (error) {
-      console.error(`Error: ${error.message}`);
+      setMsg(null);
+      setError(`Error: ${error.message}`);
     }
   };
   return (
@@ -41,15 +48,19 @@ const DeleteUser = (props) => {
         </div>
         <div className="modal-buttons">
           <button onClick={handleDelete} type="delete">
-            Delete
+            Yes
           </button>
           <button onClick={() => setModal("")} type="close">
             Cancel
           </button>
         </div>
       </div>
+      {msg && <SuccessModal setModal={setModal} msg={msg} setMsg={setMsg} />}
+      {error && (
+        <ErrorModal setModal={setModal} error={error} setError={setError} />
+      )}
     </div>
   );
 };
 
-export default DeleteUser;
+export default DeleteUserModal;

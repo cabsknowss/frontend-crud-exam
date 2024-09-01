@@ -1,21 +1,22 @@
 .user-table {
   width: 100%;
   border-collapse: collapse;
-  margin: 2rem 0;
+  margin: 1rem 0;
   text-align: left;
 
   th {
     padding: 12px 15px;
-    border: 1px solid $clr-neutral-600;
+    border: 0.3px solid $clr-neutral-500;
     text-align: center;
     background-color: $clr-neutral-600;
     color: $clr-neutral-200;
   }
 
   td {
-    padding: 12px 15px;
+    padding: 5px 8px;
     border: 1px solid $clr-neutral-600;
     color: $clr-neutral-600;
+    cursor: pointer;
 
     .table-avatar {
       display: block;
@@ -42,7 +43,7 @@
     display: inline-block;
     padding: 0.5rem;
     margin-inline: 0.5rem;
-    border-radius: 50%;
+    border-radius: 20%;
     box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
     transition: opacity 0.2s ease-in;
   }
@@ -51,11 +52,15 @@
     opacity: 0.6;
   }
 
-  tbody tr {
-    background-color: #f2f2f2;
+  tbody tr:nth-child(even) {
+    background-color: $clr-neutral-100;
+  }
+
+  tbody tr:nth-child(odd) {
+    background-color: $clr-neutral-200;
   }
 
   tbody tr:hover {
-    background-color: #d9d9d9;
+    background-color: $clr-neutral-400;
   }
 }

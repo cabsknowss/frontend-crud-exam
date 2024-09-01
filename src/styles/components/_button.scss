@@ -14,11 +14,12 @@ button:hover {
 .modal-buttons {
   display: flex;
   gap: 0.5rem;
+  justify-content: end;
 }
 
 button[type="add"] {
   background-color: $clr-primary-400;
-  color: $clr-neutral-700;
+  color: $clr-neutral-500;
 }
 
 button[type="submit"] {

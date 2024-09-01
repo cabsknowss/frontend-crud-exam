@@ -17,3 +17,8 @@
   transform-origin: center;
   animation: rotation 2s linear infinite;
 }
+
+.page-user__header {
+  display: flex;
+  justify-content: space-between;
+}

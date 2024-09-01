@@ -1,0 +1,47 @@
+.msg-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+
+  .msg-modal__container {
+    position: fixed;
+    width: 600px;
+    height: auto;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: white;
+    color: black;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px hsla(0, 0%, 0%, 0.3);
+
+    .msg-modal__notice {
+      border-bottom: 0.5px solid $clr-neutral-400;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .msg-modal__title {
+      font-weight: $fw-bold;
+      font-size: $fs-subheading;
+      padding: 0 0 1rem 1rem;
+      margin-bottom: 1rem;
+      border-bottom: 0.5px solid $clr-neutral-400;
+    }
+
+    .msg-modal__buttons {
+      text-align: right;
+      display: flex;
+      gap: 1rem;
+      justify-content: end;
+    }
+  }
+}
