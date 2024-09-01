@@ -37,10 +37,10 @@ const EditUserModal = (props) => {
 
       // const result = await response.json();
       setError(null);
-      setMsg("Edit Successful");
+      setMsg("User details updated successfully");
     } catch (error) {
       setMsg(null);
-      setError(`Error: ${error.message}`);
+      setError(error.message);
     }
   };
 

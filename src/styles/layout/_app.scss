@@ -10,14 +10,14 @@
   flex: 0 0 $nav-width;
   padding: $sidebar-padding;
 
-  background-color: $clr-primary-900;
+  background: $clr-dark-gradient;
 }
 
 .page-main {
-  $main-padding: 5rem 2rem;
+  $main-padding: 5rem 1rem;
 
   flex: 1 1 auto;
   padding: $main-padding;
 
-  background-color: $clr-primary-300;
+  background-color: $clr-neutral-200;
 }

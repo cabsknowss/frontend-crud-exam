@@ -8,6 +8,7 @@ const DeleteUserModal = (props) => {
   const [msg, setMsg] = useState(null);
   const [error, setError] = useState(null);
 
+  // Function that deletes user
   const handleDelete = async (e) => {
     e.preventDefault();
     try {
@@ -27,10 +28,10 @@ const DeleteUserModal = (props) => {
 
       // const result = await response.json();
       setError(null);
-      setMsg("User Account is Deleted");
+      setMsg("User successfully deleted");
     } catch (error) {
       setMsg(null);
-      setError(`Error: ${error.message}`);
+      setError(error.message);
     }
   };
   return (
@@ -40,10 +41,23 @@ const DeleteUserModal = (props) => {
         <div>
           <p>Are you sure you want to delete this user?</p>
           <div className="action-modal-delete__details">
-            <p>ID: {userData.id}</p>
-            <p>Email: {userData.email}</p>
-            <p>First Name: {userData.first_name}</p>
-            <p>Last Name: {userData.last_name}</p>
+            <div>
+              <img
+                className="action-modal-delete__avatar"
+                src={userData.avatar}
+                alt="avatar"
+              />
+            </div>
+            <div>
+              <p className="action-modal-delete__name">
+                {userData.first_name} {userData.last_name}{" "}
+                <span className="action-modal-delete__id">
+                  (ID: {userData.id})
+                </span>
+              </p>
+
+              <p className="action-modal-delete__email">{userData.email}</p>
+            </div>
           </div>
         </div>
         <div className="modal-buttons">

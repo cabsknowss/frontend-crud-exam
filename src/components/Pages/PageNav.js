@@ -24,7 +24,13 @@ function PageNav() {
     <div className="page-nav">
       <div className="page-nav__nameplate">
         <NavLink tag={Link} to="/">
-          <h2>ADMIN</h2>
+          <h2
+            className={` page-nav__title ${
+              location.pathname === "/" && "active nohover"
+            }`}
+          >
+            ADMIN
+          </h2>
         </NavLink>
       </div>
 
@@ -35,7 +41,7 @@ function PageNav() {
               <NavLink tag={Link} to={nav.link}>
                 <div
                   className={`page-nav__list ${
-                    location.pathname.includes(nav.link) && "active nohover"
+                    location.pathname === nav.link && "active nohover"
                   }`}
                 >
                   <div>{nav.icon}</div>

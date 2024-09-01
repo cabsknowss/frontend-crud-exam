@@ -3,6 +3,24 @@
   height: 60vh;
   margin: 1rem 0;
   overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: darkgray;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: gray;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $clr-neutral-300;
+    border-radius: 10px;
+  }
 }
 
 .user-table {
@@ -11,18 +29,26 @@
   border-collapse: collapse;
   text-align: left;
 
+  thead {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+
   th {
     padding: 12px 15px;
-    border: 0.3px solid $clr-neutral-500;
     text-align: center;
-    background-color: $clr-neutral-600;
+    background: $clr-dark-gradient;
     color: $clr-neutral-200;
+    font-size: 0.9rem;
   }
 
   td {
     padding: 5px 8px;
-    border: 1px solid $clr-neutral-600;
     color: $clr-neutral-600;
+    text-align: center;
+    font-size: 0.9rem;
+    height: 50px;
     cursor: pointer;
 
     .table-avatar {
@@ -38,25 +64,25 @@
     text-align: center;
 
     .table-action__edit {
-      background-color: $clr-success-400;
+      background-color: $clr-success-200;
     }
 
     .table-action__delete {
-      background-color: $clr-error-400;
+      background-color: $clr-error-200;
     }
   }
 
   .table-action > * {
     display: inline-block;
-    padding: 0.5rem;
-    margin-inline: 0.5rem;
+    padding: 0.3rem;
+    margin-inline: 0.3rem;
     border-radius: 20%;
     box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
     transition: opacity 0.2s ease-in;
   }
 
   .table-action > *:hover {
-    opacity: 0.6;
+    opacity: 0.5;
   }
 
   tbody tr:nth-child(even) {
@@ -76,4 +102,5 @@
   display: flex;
   justify-content: center;
   gap: 0.5rem;
+  margin: 1rem;
 }

@@ -8,9 +8,11 @@ const AddUserModal = (props) => {
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
+
   const [msg, setMsg] = useState(null);
   const [error, setError] = useState(null);
 
+  // Function that creates user
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = {
@@ -21,6 +23,7 @@ const AddUserModal = (props) => {
     };
 
     try {
+      // POST REQUEST
       const response = await fetch("https://reqres.in/api/users", {
         method: "POST",
         headers: {
@@ -35,10 +38,10 @@ const AddUserModal = (props) => {
 
       const result = await response.json();
       setError(null);
-      setMsg(`User Created Successfully. ID: ${result.id}`);
+      setMsg(`User successfully added. ID: ${result.id}`);
     } catch (error) {
       setMsg(null);
-      setError(`Error: ${error.message}`);
+      setError(error.message);
     }
   };
 

@@ -6,25 +6,25 @@ const UserTable = (props) => {
 
   const [currentPage, setCurrentPage] = useState(1);
 
-  const rowsPerPage = 10;
-  const totalPages = Math.ceil([...users, ...users].length / rowsPerPage);
+  const rowsPerPage = 10; // Allowed data per page
+  const totalPages = Math.ceil([...users, ...users].length / rowsPerPage); // Computes how many is the page
 
   const dataShow = [...users, ...users].slice(
     (currentPage - 1) * rowsPerPage,
     currentPage * rowsPerPage
-  );
+  ); // A sliced array that will be used in mapping the data
 
   const editUser = (e, user) => {
     e.stopPropagation();
     setModal("Edit User");
     setUserData(user);
-  };
+  }; // Popup edit modal and store the details of the user within the clicked row
 
   const deleteUser = (e, user) => {
     e.stopPropagation();
     setModal("Delete User");
     setUserData(user);
-  };
+  }; // Popup delete modal and store the details of the user within the clicked row
 
   return (
     <>
@@ -44,7 +44,7 @@ const UserTable = (props) => {
             {dataShow.map((user, index) => (
               <>
                 <tr key={index} onClick={() => setViewProfile(user)}>
-                  <th scope="row">{user.id}</th>
+                  <td>{user.id}</td>
                   <td className="page-user__table-avatar-cell">
                     <img
                       className="table-avatar"
@@ -60,13 +60,13 @@ const UserTable = (props) => {
                       onClick={(e) => editUser(e, user)}
                       className="table-action__edit"
                     >
-                      <Edit style={{ color: "white" }} />
+                      <Edit style={{ color: "hsl(0,0%,100%)" }} />
                     </div>
                     <div
                       onClick={(e) => deleteUser(e, user)}
                       className="table-action__delete"
                     >
-                      <Delete style={{ color: "white" }} />
+                      <Delete style={{ color: "hsl(0,0%,100%)" }} />
                     </div>
                   </td>
                 </tr>
@@ -75,7 +75,7 @@ const UserTable = (props) => {
             {dataShow.length !== 10 &&
               Array.from({ length: 10 - dataShow.length }, (_, index) => (
                 <tr key={index}>
-                  <th></th>
+                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -90,22 +90,29 @@ const UserTable = (props) => {
         <button
           onClick={() => setCurrentPage(currentPage - 1)}
           disabled={currentPage === 1}
+          type="pagination"
         >
-          Previous
+          &lt;
         </button>
         {Array.from({ length: totalPages }, (_, i) => (
-          <button key={i + 1} onClick={() => setCurrentPage(i + 1)}>
+          <button
+            type="pagination"
+            key={i + 1}
+            onClick={() => setCurrentPage(i + 1)}
+            className={i + 1 === currentPage && "active"}
+          >
             {i + 1}
           </button>
         ))}
         <button
+          type="pagination"
           onClick={() => {
             setCurrentPage(currentPage + 1);
             console.log(currentPage);
           }}
           disabled={currentPage === totalPages}
         >
-          Next
+          &gt;
         </button>
       </div>
     </>

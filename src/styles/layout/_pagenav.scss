@@ -5,6 +5,10 @@
 
   .page-nav__nameplate {
     align-self: center;
+
+    .page-nav__title {
+      text-shadow: 1px 1px 9px rgba(255, 255, 255, 0.5);
+    }
   }
 
   h2 {
@@ -22,7 +26,7 @@
 
     padding: 10px 12px;
     margin: 1rem 0 0 -0.5rem;
-    border-radius: 1rem;
+    border-radius: 0.3rem;
     color: $clr-neutral-200;
     cursor: pointer;
   }
@@ -40,4 +44,10 @@
 
 .page-nav__list.active {
   background-color: $clr-primary-700;
+  opacity: 0.9;
+  box-shadow: 0px 0px 10px $clr-primary-700;
+}
+
+.page-nav__title.active {
+  color: $clr-primary-700;
 }

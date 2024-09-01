@@ -24,6 +24,20 @@ $clr-neutral-300: hsl(0, 0%, 88%);
 $clr-neutral-200: hsl(0, 0%, 94%);
 $clr-neutral-100: hsl(0, 0%, 100%);
 
+$clr-dark-gradient: linear-gradient(
+  135deg,
+  hsl(234, 22%, 9%),
+  hsl(236, 79%, 7%)
+);
+
+$clr-dark2-gradient: linear-gradient(
+  to left,
+  hsl(234, 34%, 27%),
+  hsl(236, 79%, 7%)
+);
+
+$clr-light-gradient: linear-gradient(135deg, hsl(0, 0%, 96%), hsl(0, 0%, 89%));
+
 $ff-sans: "Helvetica", sans-serif;
 $ff-serif: "Georgia", "Times New Roman", serif;
 $ff-mono: "Courier New", "Roboto Mono", monospace;

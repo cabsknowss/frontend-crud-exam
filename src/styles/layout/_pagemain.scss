@@ -3,12 +3,13 @@
 
   .page-container {
     height: 100%;
-    max-width: 80%;
+    max-width: 90%;
     margin-inline: auto;
 
     .page-title {
       font-size: $fs-secondary-heading;
       font-weight: $fw-bold;
+      color: hsl(0, 0%, 24%);
     }
   }
 }

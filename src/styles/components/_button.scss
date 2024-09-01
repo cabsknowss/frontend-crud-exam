@@ -5,10 +5,13 @@ button {
   border: 0;
   box-shadow: 2px 2px 5px hsla(0, 0%, 0%, 0.3);
   transition: opacity 0.3s ease;
+  font-weight: $fw-semi-bold;
+  font-size: 0.8rem;
+  cursor: pointer;
 }
 
 button:hover {
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 .modal-buttons {
@@ -18,13 +21,16 @@ button:hover {
 }
 
 button[type="add"] {
-  background-color: $clr-primary-400;
-  color: $clr-neutral-500;
+  background-color: $clr-neutral-700;
+  color: hsl(216, 100%, 89%);
+  font-weight: $fw-bold;
+  margin-right: 1rem;
 }
 
 button[type="submit"] {
-  background-color: $clr-success-400;
-  color: $clr-neutral-100;
+  background-color: $clr-neutral-700;
+  color: hsl(216, 100%, 89%);
+  font-weight: $fw-bold;
 }
 
 button[type="delete"] {
@@ -34,4 +40,17 @@ button[type="delete"] {
 
 button[type="close"] {
   background-color: $clr-neutral-200;
+}
+
+button[type="pagination"] {
+  background-color: $clr-neutral-400;
+  color: $clr-neutral-900;
+  font-size: 0.7rem;
+  padding: 8px 16px;
+  // margin-inline: 8px;
+}
+
+button[type="pagination"].active {
+  color: $clr-neutral-200;
+  background: $clr-dark-gradient;
 }

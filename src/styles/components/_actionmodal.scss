@@ -4,9 +4,11 @@
   left: 0;
   height: 100vh;
   width: 100%;
+  z-index: 99;
 
   background-color: hsla(0, 0%, 0%, 0.5);
   backdrop-filter: blur(8px);
+  font-size: 14px;
 
   .action-modal__container {
     position: fixed;
@@ -16,7 +18,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
 
-    background-color: white;
+    // background-color: white;
+    background: $clr-light-gradient;
     color: black;
     padding: 3rem 5rem;
     border-radius: 1rem;
@@ -32,4 +35,23 @@
 
 .action-modal-delete__details {
   margin-block: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  .action-modal-delete__avatar {
+    max-width: 90px;
+    height: auto;
+    border-radius: 50%;
+  }
+
+  .action-modal-delete__id {
+    font-size: 0.75rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .action-modal-delete__name {
+    font-size: 1.5rem;
+    font-weight: $fw-bold;
+  }
 }
