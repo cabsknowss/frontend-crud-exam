@@ -10,6 +10,7 @@ const EditUserModal = (props) => {
   const [lastName, setLastName] = useState("");
   const [msg, setMsg] = useState(null);
   const [error, setError] = useState(null);
+  const [remind, setRemind] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,6 +21,16 @@ const EditUserModal = (props) => {
     };
 
     try {
+      if (!data.email || !data.first_name || !data.last_name) {
+        setRemind("Fill all required input fields");
+        return;
+      }
+
+      if (!data.email.includes("@")) {
+        setRemind("Email must be valid");
+        return;
+      }
+
       const response = await fetch(
         `https://reqres.in/api/users/${userData.id}`,
         {
@@ -55,7 +66,7 @@ const EditUserModal = (props) => {
           </label>
           <input
             onChange={(e) => setEmail(e.target.value)}
-            type="email"
+            // type="email"
             id="email"
             placeholder="you@example.com"
             required
@@ -82,7 +93,9 @@ const EditUserModal = (props) => {
             placeholder="Enter your last name"
             required
           />
-
+          <div className="action-modal__remind">
+            {remind && <p>{remind}</p>}
+          </div>
           <div className="modal-buttons">
             <button type="submit">Submit</button>
             <button type="close" onClick={() => setModal("")}>

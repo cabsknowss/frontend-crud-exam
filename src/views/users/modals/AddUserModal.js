@@ -11,6 +11,7 @@ const AddUserModal = (props) => {
 
   const [msg, setMsg] = useState(null);
   const [error, setError] = useState(null);
+  const [remind, setRemind] = useState(null);
 
   // Function that creates user
   const handleSubmit = async (e) => {
@@ -23,6 +24,14 @@ const AddUserModal = (props) => {
     };
 
     try {
+      if (!data.email || !data.first_name || !data.last_name) {
+        setRemind("Fill all required input fields");
+        return;
+      }
+      if (!data.email.includes("@")) {
+        setRemind("Email must be valid");
+        return;
+      }
       // POST REQUEST
       const response = await fetch("https://reqres.in/api/users", {
         method: "POST",
@@ -83,6 +92,9 @@ const AddUserModal = (props) => {
             placeholder="Enter your last name"
             required
           />
+          <div className="action-modal__remind">
+            {remind && <p>{remind}</p>}
+          </div>
           <div className="modal-buttons">
             <button type="submit">Submit</button>
             <button type="close" onClick={() => setModal("")}>

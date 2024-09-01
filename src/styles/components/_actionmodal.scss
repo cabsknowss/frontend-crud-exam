@@ -66,3 +66,8 @@
     font-weight: $fw-bold;
   }
 }
+
+.action-modal__remind {
+  color: $clr-error-400;
+  margin-bottom: 8px;
+}
