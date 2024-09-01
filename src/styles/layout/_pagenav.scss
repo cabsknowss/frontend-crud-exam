@@ -3,14 +3,17 @@
   flex-direction: column;
   gap: 3rem;
 
+  @media (max-width: $mobile-screen) {
+    display: block;
+  }
+
   .page-nav__nameplate {
     align-self: center;
-    display: flex;
-    align-items: center;
-    height: 50px;
 
     @media (max-width: $mobile-screen) {
       align-self: auto;
+      display: flex;
+      align-items: center;
       justify-content: space-between;
     }
 
@@ -95,7 +98,7 @@
     color: $clr-neutral-200;
     cursor: pointer;
 
-    @media (max-width: $tablet-screen) {
+    @media (max-width: $mobile-screen) and (max-width: $tablet-screen) {
       justify-content: center;
     }
 

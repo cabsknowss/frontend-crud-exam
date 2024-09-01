@@ -18,10 +18,10 @@
 
     @media (max-width: $mobile-screen) {
       flex: 0 1 auto;
-      padding: 2rem;
+      padding: 1rem;
     }
 
-    @media (max-width: $tablet-screen) {
+    @media (min-width: $mobile-screen) and (max-width: $tablet-screen) {
       flex: 0 0 128px;
     }
   }
@@ -33,7 +33,7 @@
   }
 
   .page-main {
-    $main-padding: 5rem 1rem;
+    $main-padding: 3rem 1rem;
 
     flex: 1 1 auto;
     padding: $main-padding;

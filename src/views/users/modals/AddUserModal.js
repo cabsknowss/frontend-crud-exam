@@ -16,6 +16,7 @@ const AddUserModal = (props) => {
   // Function that creates user
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setRemind(null);
     const data = {
       email: email,
       avatar: "",

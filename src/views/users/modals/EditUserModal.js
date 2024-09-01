@@ -14,6 +14,7 @@ const EditUserModal = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setRemind(null);
     const data = {
       email: email,
       first_name: firstName,
@@ -66,7 +67,7 @@ const EditUserModal = (props) => {
           </label>
           <input
             onChange={(e) => setEmail(e.target.value)}
-            // type="email"
+            type="email"
             id="email"
             placeholder="you@example.com"
             required
