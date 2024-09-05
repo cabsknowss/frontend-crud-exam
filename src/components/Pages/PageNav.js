@@ -64,8 +64,8 @@ function PageNav() {
           </div>
         </div>
         {navList.map((nav, index) => (
-          <li key={index}>
-            <NavItem>
+          <NavItem>
+            <li key={index}>
               <NavLink tag={Link} to={nav.link}>
                 <div
                   onClick={() => setMenuOpen(false)}
@@ -77,8 +77,8 @@ function PageNav() {
                   <p className="page-nav__list-text">{nav.text}</p>
                 </div>
               </NavLink>
-            </NavItem>
-          </li>
+            </li>
+          </NavItem>
         ))}
       </ul>
     </div>
