@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { NavLink as Link, useLocation } from "react-router-dom";
-import { NavLink, NavItem } from "reactstrap";
+import { Link, useLocation } from "react-router-dom";
 import {
   Group,
   Highlight,
@@ -39,16 +38,17 @@ function PageNav() {
   return (
     <div className="page-nav">
       <div className="page-nav__nameplate">
-        <NavLink tag={Link} to="/">
+        <Link to="/frontend-crud-exam" style={{textDecoration: "none"}}>
           <h2
             className={` page-nav__title ${
               location.pathname === "/" && "active nohover"
             }`}
             onClick={() => setMenuOpen(false)}
+            
           >
             ADMIN
           </h2>
-        </NavLink>
+        </Link>
         <div onClick={() => setMenuOpen(true)} className="page-nav__menu-open">
           <Menu />
         </div>
@@ -64,9 +64,8 @@ function PageNav() {
           </div>
         </div>
         {navList.map((nav, index) => (
-          <NavItem>
             <li key={index}>
-              <NavLink tag={Link} to={nav.link}>
+              <Link to={nav.link} style={{textDecoration: "none"}}>
                 <div
                   onClick={() => setMenuOpen(false)}
                   className={`page-nav__list ${
@@ -76,9 +75,8 @@ function PageNav() {
                   <div>{nav.icon}</div>
                   <p className="page-nav__list-text">{nav.text}</p>
                 </div>
-              </NavLink>
+                </Link>
             </li>
-          </NavItem>
         ))}
       </ul>
     </div>

@@ -11,7 +11,7 @@ function App() {
       <Router>
         <Page>
           <Switch>
-            <Route exact path="/">
+            <Route exact path="/frontend-crud-exam">
               <Home />
             </Route>
             <Route path="/users">
